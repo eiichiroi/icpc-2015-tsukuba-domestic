@@ -65,7 +65,7 @@ struct EdgeIndexPair {
   int cost;
 };
 
-struct EdgeIndexPairCostGreater {
+struct EdgeIndexPairCostLess {
   bool operator()(const EdgeIndexPair& e, const EdgeIndexPair& f) const {
     if (e.cost != f.cost) {
       return e.cost < f.cost;
@@ -147,7 +147,7 @@ int solve(int n, int m, int k,
     }
 
     if (edges.empty()) break;
-    sort(edges.begin(), edges.end(), EdgeIndexPairCostGreater());
+    sort(edges.begin(), edges.end(), EdgeIndexPairCostLess());
     a_used[edges[0].a_index] = true;
     b_used[edges[0].b_index] = false;
     num_a_proposals++;
