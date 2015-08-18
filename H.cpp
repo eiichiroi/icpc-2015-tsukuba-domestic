@@ -11,15 +11,11 @@ struct Hole {
 
   void getAllX(vector<int>& x) const {
     x.push_back(x_0-1);
-    x.push_back(x_0);
-    x.push_back(x_1);
     x.push_back(x_1+1);
   }
   
   void getAllY(vector<int>& y) const {
     y.push_back(y_0-1);
-    y.push_back(y_0);
-    y.push_back(y_1);
     y.push_back(y_1+1);
   }
 
